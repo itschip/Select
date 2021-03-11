@@ -1,8 +1,11 @@
 <script lang="ts">
-  export let name: string;
+  import Menu from './components/Menu/Menu.svelte';
 </script>
 
-<main />
+<main>
+  <h1>Hello</h1>
+  <Menu />
+</main>
 
 <style>
   main {
