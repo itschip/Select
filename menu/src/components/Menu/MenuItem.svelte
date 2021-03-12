@@ -10,7 +10,7 @@
 
 <div class="menu-item">
   <h3 class="item-title">{item.title}</h3>
-  <p>{item.desc}</p>
+  <p class="item-description">Descripton: {item.desc}</p>
 </div>
 
 <style>
@@ -28,5 +28,9 @@
 
   .item-title {
     font-weight: 500;
+  }
+  
+  .item-description {
+    font-weight: 400;
   }
 </style>
