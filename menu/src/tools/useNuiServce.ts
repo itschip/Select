@@ -1,3 +1,1 @@
-export const useNuiService = () => {
-  
-}
+export const useNuiService = () => {};

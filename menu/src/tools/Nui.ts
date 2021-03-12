@@ -5,7 +5,7 @@ export default {
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
       },
-      body: JSON.stringify(data)
-    })
-  }
-}
+      body: JSON.stringify(data),
+    });
+  },
+};
