@@ -23,11 +23,4 @@
 </main>
 
 <style>
-  .card {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background: #232323;
-
-    color: #fff;
-  }
 </style>
