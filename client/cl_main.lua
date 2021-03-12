@@ -20,3 +20,11 @@ AddEventHandler('CreateSelectMenu', function(elements)
 
   SendMessage('setData', elements)
 end)
+
+
+
+--[[ Example:
+
+exports.Select.CreateSelectMenu(table)
+
+]]
