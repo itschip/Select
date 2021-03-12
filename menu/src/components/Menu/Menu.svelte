@@ -6,12 +6,12 @@
     {
       id: 1,
       title: 'T20',
-      fuel: '20%',
+      desc: '20%',
     },
     {
       id: 2,
       title: 'Adder',
-      fuel: '30%',
+      desc: '30%',
     },
   ];
 </script>
