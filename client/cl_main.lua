@@ -2,5 +2,5 @@
 
 local CreateMenu = function()
   -- this will create a new menu
-  SendMessage('createMenu', 'some array')
+  SendMessage('createMenu', 'some array or table')
 end
