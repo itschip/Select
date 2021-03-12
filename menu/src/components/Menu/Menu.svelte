@@ -1,4 +1,7 @@
 <script lang="ts">
+  import MenuItem from './MenuItem.svelte';
+
+  // this is just some mock data
   const lists = [
     {
       id: 1,
@@ -15,9 +18,7 @@
 
 <main>
   {#each lists as item}
-    <div class="card">
-      {item.title}
-    </div>
+    <MenuItem {item} />
   {/each}
 </main>
 
