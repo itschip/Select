@@ -1,0 +1,33 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Release Action
+
+on:
+  push:
+    branches: [ main ]
+
+jobs: 
+  build: 
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Source
+      - uses: actions/checkout@v1
+        with:
+          token: ${{ secrets.SELECT_TOKEN }}
+      - name: Install deps for NUI
+        run: |
+          cd menu && yarn --frozen-lockfile
+      - name: Build NUI
+        run: | 
+          cd menu && yarn build
+      - name: Compressing files
+        run: tar -czf Select.tar.gz menu/build/ client/ fxmanifest.lua LICENSE
+      - name: Create and deploy GitHub release
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with: 
+          repo_token: "${{ secret.SEELCT_TOKEN }}"
+          prerelease: false
+          title: 'Select Menu'
+          files: Select.tar.gz
