@@ -9,6 +9,8 @@ import css from 'rollup-plugin-css-only';
 
 const production = !process.env.ROLLUP_WATCH;
 
+// I suppose I'd have to change to webpack, as rollup is a bitch.
+
 function serve() {
   let server;
 
