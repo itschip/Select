@@ -1,23 +1,19 @@
 <script lang="ts">
   import MenuItem from './MenuItem.svelte';
 
-  // this is just some mock data
-  const lists = [
-    {
-      id: 1,
-      title: 'T20',
-      desc: '20%',
-    },
-    {
-      id: 2,
-      title: 'Adder',
-      desc: '30%',
-    },
-  ];
+  let items = [];
+
+  window.addEventListener('message', (event) => {
+    const msg = event.data
+    if (msg.method === 'setData') {
+      items = msg.data;
+    }
+  })
+
 </script>
 
 <main>
-  {#each lists as item}
+  {#each items as item}
     <MenuItem {item} />
   {/each}
 </main>
