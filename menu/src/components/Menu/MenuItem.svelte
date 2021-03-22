@@ -1,4 +1,6 @@
 <script lang="ts">
+  import Nui from "../../utils/Nui";
+
   interface MenuItem {
     id: number;
     title: string;
@@ -6,9 +8,15 @@
   }
 
   export let item: MenuItem;
+
+  const handleItemClick = (item) => {
+    Nui.send('Select:HandleClick', {
+      item
+    })
+  }
 </script>
 
-<div class="menu-item">
+<div class="menu-item" on:click={handleItemClick(item)}>
   <h3 class="item-title">{item.title}</h3>
   <p class="item-description">{item.desc}</p>
 </div>
