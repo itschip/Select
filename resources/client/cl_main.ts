@@ -1,7 +1,24 @@
 import { NuiCallback } from './cl_utils';
 
-NuiCallback('Select:getItem', (data: any) => {
-  // do something
+// TODO: Create exports soonTM
+const exp = (global as any).exports;
+
+exp('CreateMenu', (menu: Menu) => {
+  SendNuiMessage(
+    JSON.stringify({
+      data: menu,
+    }),
+  );
 });
 
-// TODO: Create exports soonTM
+// Interfaces
+
+interface Menu {
+  title: string;
+  items: MenuItem[];
+}
+
+interface MenuItem {
+  title: string;
+  description: string;
+}

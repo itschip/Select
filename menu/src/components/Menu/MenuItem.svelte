@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Nui from "../../utils/Nui";
+  import Nui from '../../utils/Nui';
 
   interface MenuItem {
     id: number;
@@ -11,12 +11,12 @@
 
   const handleItemClick = (item) => {
     Nui.send('Select:HandleClick', {
-      item
-    })
-  }
+      item,
+    });
+  };
 </script>
 
-<div class="menu-item" on:click={handleItemClick(item)}>
+<div class="menu-item" on:click={() => handleItemClick(item)}>
   <h3 class="item-title">{item.title}</h3>
   <p class="item-description">{item.desc}</p>
 </div>
@@ -43,7 +43,7 @@
   .item-title {
     font-weight: 600;
   }
-  
+
   .item-description {
     margin-top: -20px;
     font-weight: 400;
