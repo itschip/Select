@@ -22,3 +22,15 @@ interface MenuItem {
   title: string;
   description: string;
 }
+
+/* 
+exp['Select'].CreateMenu({
+  title: 'Garage',
+  items: [
+    {
+      title: 'T20',
+      descripton: 'Best car'
+    }
+  ]
+})
+*/
