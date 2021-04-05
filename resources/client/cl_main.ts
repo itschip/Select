@@ -11,6 +11,17 @@ exp('CreateMenu', (menu: Menu) => {
   );
 });
 
+RegisterCommand('exmenu', () => {
+  console.log('hello mister')
+
+  SendNuiMessage(
+    JSON.stringify({
+      visible: true
+    })
+  )
+  SetNuiFocus(true, false);
+
+}, false)
 // Interfaces
 
 interface Menu {
