@@ -4,8 +4,10 @@
   let items = [];
 
   window.addEventListener('message', (event) => {
+    console.log(event)
     const msg = event.data
     if (msg.method === 'setData') {
+      console.log(msg.data)
       items = msg.data;
     }
   })

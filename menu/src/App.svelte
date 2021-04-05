@@ -1,7 +1,7 @@
 <script lang="ts">
   import Menu from './components/Menu/Menu.svelte';
 
-  setTimeout(() => {
+/*  setTimeout(() => {
     window.dispatchEvent(
             new MessageEvent('message', {
               data: {
@@ -21,12 +21,20 @@
               }
             })
     )
-  }, 1000);
+  }, 1000);*/
+
+  let visibility;
+
+  window.addEventListener('message', (event) => {
+    visibility = event.data.visible;
+  })
 
 </script>
 
 <main>
-  <Menu />
+  {#if visibility}
+    <Menu />
+  {/if}
 </main>
 
 <style>

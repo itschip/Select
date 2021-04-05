@@ -1,6 +1,5 @@
 <script lang="ts">
   import Nui from '../../utils/Nui';
-
   interface MenuItem {
     id: number;
     title: string;
