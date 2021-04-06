@@ -21,30 +21,36 @@
 </div>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap');
 
   .menu-item {
-    font-family: 'Rubik', sans-serif;
     display: flex;
     flex-flow: column;
     align-content: center;
-    align-items: center;
-    background-color: #232323;
+    text-align: left;
+    padding-left: 10px;
+    background-color: #303952;
+    border: 1px solid #596275;
     height: auto;
     min-height: 50px;
     max-height: 100px;
     color: #fff;
     margin-bottom: 20px;
-    border-radius: 7px;
+    border-radius: 5px;
     cursor: pointer;
+    transition: .1s;
+  }
+
+  .menu-item:hover {
+    background-color: #596275;
   }
 
   .item-title {
-    font-weight: 600;
+    font-weight: 500;
   }
 
   .item-description {
     margin-top: -20px;
     font-weight: 400;
+    font-size: 14px;
   }
 </style>

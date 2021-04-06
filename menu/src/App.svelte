@@ -1,32 +1,24 @@
 <script lang="ts">
   import Menu from './components/Menu/Menu.svelte';
 
-/*  setTimeout(() => {
+  setTimeout(() => {
     window.dispatchEvent(
             new MessageEvent('message', {
               data: {
-                method: 'setData',
-                data: [
-                  {
-                    id: 1,
-                    title: "T20",
-                    desc: 'Fast as fuck boii'
-                  },
-                  {
-                    id: 1,
-                    title: "Adder",
-                    desc: 'Fast as fuck boii'
-                  }
-                ]
+                method: 'setVisibility',
+                data: true
               }
             })
     )
-  }, 1000);*/
+  }, 1000)
 
   let visibility;
 
   window.addEventListener('message', (event) => {
-    visibility = event.data.visible;
+    const msg = event.data
+    if (msg.method === 'setVisibility') {
+      visibility = msg.data;
+    }
   })
 
 </script>
@@ -38,6 +30,11 @@
 </main>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap');
+  * {
+    font-family: 'Rubik', sans-serif;
+  }
+
   main {
     text-align: center;
     padding: 1em;
