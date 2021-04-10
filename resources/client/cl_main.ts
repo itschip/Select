@@ -6,22 +6,47 @@ const exp = (global as any).exports;
 exp('CreateMenu', (menu: Menu) => {
   SendNuiMessage(
     JSON.stringify({
+      method: 'setVisibility',
+      visible: true,
+    }),
+  );
+  SendNuiMessage(
+    JSON.stringify({
+      method: 'setData',
       data: menu,
     }),
   );
 });
 
-RegisterCommand('exmenu', () => {
-  console.log('hello mister')
+RegisterCommand(
+  'exmenu',
+  () => {
+    SendNuiMessage(
+      JSON.stringify({
+        method: 'setVisibility',
+        data: true,
+      }),
+    );
 
-  SendNuiMessage(
-    JSON.stringify({
-      visible: true
-    })
-  )
-  SetNuiFocus(true, false);
+    SetNuiFocus(true, false);
+  },
+  false,
+);
 
-}, false)
+RegisterCommand(
+  'endmenu',
+  () => {
+    SendNuiMessage(
+      JSON.stringify({
+        method: 'setVisibility',
+        data: false,
+      }),
+    );
+
+    SetNuiFocus(false, false);
+  },
+  false,
+);
 // Interfaces
 
 interface Menu {
