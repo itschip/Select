@@ -1,10 +1,11 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import { useItems, useVisibility } from './context/MenuProvider';
+import Menu from './Menu/Menu';
 
 function App() {
   const { visibility } = useVisibility();
-  const { items } = useItems();
+  const items = useItems();
 
   return <div className="App">{visibility && <Menu items={items} />}</div>;
 }
