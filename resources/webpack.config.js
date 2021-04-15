@@ -32,7 +32,7 @@ const client = {
     extensions: ['.ts', '.js'],
   },
   output: {
-    filename: '[contenthash].client.js',
+    filename: '[contenthash].client.script.js',
     path: path.resolve(buildPath, 'client'),
   },
 };

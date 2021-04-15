@@ -70,3 +70,8 @@ exp['Select'].CreateMenu({
   ]
 })
 */
+
+
+NuiCallback('selectedItem', (data: any) => {
+  console.log(data);
+})

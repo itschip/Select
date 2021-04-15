@@ -1,7 +1,7 @@
 fx_version "cerulean"
 game "gta5"
 
-client_script "resources/dist/client/*.client.js"
+client_script "resources/dist/client/*.client.script.js"
 
 ui_page "menu/public/index.html"
 
