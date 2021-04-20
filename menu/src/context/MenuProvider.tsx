@@ -7,7 +7,6 @@ const MenuContext = createContext<IMenuContext | undefined>(undefined);
 export default function MenuProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<IMenuItem[]>([]);
   const [visibility, setVisibility] = useState<boolean>(false);
-
   useNuiEvent('SelectMenu', 'setItems', setItems);
 
   const value = {
