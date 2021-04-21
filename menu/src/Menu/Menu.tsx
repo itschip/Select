@@ -1,7 +1,6 @@
 import React from 'react';
 import { IMenuItem } from '../typings/context';
 import styles from './Menu.module.scss';
-import {} from 'fivem-nui-react-lib';
 
 export default function Menu({ items }: { items: IMenuItem[] }) {
   return (
