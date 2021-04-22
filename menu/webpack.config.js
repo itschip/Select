@@ -1,46 +1,73 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-	entry: './src/index.tsx',
-	output: {
-		filename: '[name].js',
-		path: path.resolve(process.cwd(), '../html'),
-	},
-	module: {
-		rules: [
-			{
-				test: /\.tsx?$/,
-				use: 'ts-loader',
-				exclude: /node_modules/,
-			},
-			{
-				test: /\.jsx?$'/,
-				use: 'babel-loader',
-				exclude: /node_modules/,
-			},
-			{
-				test: /\.css$/,
-				use: ['style-loader', 'css-loader'],
-				exclude: /node_modules/,
-			},
-		],
-	},
-	plugins: [
-		new HtmlWebpackPlugin({
-			template: 'public/index.html',
-			minify: {
-				minifyCSS: true,
-				minifyJS: true,
-				removeComments: true,
-				removeEmptyAttributes: true,
-        removeRedundantAttributes: true
-			},
-			inject: true,
-		}),
-	],
-	resolve: {
-		modules: ['src', 'node_modules'],
-		extensions: ['.js', '.jsx', '.ts', '.tsx', '.react.js'],
-	},
-};
+  entry: './src/index.tsx',
+  output: {
+    path: path.join(__dirname, '/dist')
+  },
+  devServer: {
+    port: 300,
+    watchContentBase: true
+  },
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: 'babel-loader'
+      },
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'ts-loader',
+            options: {
+              transpileOnly: true
+            }
+          }
+        ]
+      },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  [
+                    'postcss-preset-env'
+                  ]
+                ]
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.react.js']
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+      minify: {
+        minifyCSS: true,
+        minifyJS: true,
+        minifyURLs: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeEmptyAttributes: true,
+        collapseWhitespace: true
+      },
+      inject: true
+    })
+  ]
+}

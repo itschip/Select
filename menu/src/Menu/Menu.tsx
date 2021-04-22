@@ -1,6 +1,6 @@
 import React from 'react';
 import { IMenuItem } from '../typings/context';
-import styles from './Menu.module.css';
+import styles from './Menu.module.scss';
 
 export default function Menu({ items }: { items: IMenuItem[] }) {
   return (

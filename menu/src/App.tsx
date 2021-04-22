@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import { useItems, useVisibility } from './context/MenuProvider';
 import Menu from './Menu/Menu';
 
