@@ -1,3 +1,3 @@
 # Select
 
-A FiveM resuable list menu built with Lua and Svelte.
+A FiveM resuable list menu built with TypeScript and React.
