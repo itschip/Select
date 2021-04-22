@@ -2,7 +2,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-	mode: 'development',
 	entry: './src/index.tsx',
 	output: {
 		filename: '[name].js',
@@ -12,14 +11,7 @@ module.exports = {
 		rules: [
 			{
 				test: /\.tsx?$/,
-				use: [
-					{
-						loader: 'ts-loader',
-						options: {
-							transpileOnly: true,
-						},
-					},
-				],
+				use: 'ts-loader',
 				exclude: /node_modules/,
 			},
 			{
@@ -27,38 +19,10 @@ module.exports = {
 				use: 'babel-loader',
 				exclude: /node_modules/,
 			},
-      {
-        test: /\.html$/,
-        use: "html-loader",
-      },
 			{
 				test: /\.css$/,
 				use: ['style-loader', 'css-loader'],
 				exclude: /node_modules/,
-			},
-			{
-				// config for images
-				test: /\.(png|svg|jpg|jpeg|gif)$/,
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							outputPath: 'images',
-						},
-					},
-				],
-			},
-			{
-				// config for fonts
-				test: /\.(woff|woff2|eot|ttf|otf)$/,
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							outputPath: 'fonts',
-						},
-					},
-				],
 			},
 		],
 	},

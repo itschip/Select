@@ -22,7 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:res": "webpack --progress",
+    "build:res": "webpack --mode production --progress",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -43,15 +43,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "css-loader": "^5.2.4",
-    "file-loader": "^6.2.0",
-    "html-loader": "^2.1.2",
-    "html-webpack-plugin": "4",
-    "sass-loader": "^11.0.1",
-    "style-loader": "^2.0.0",
-    "ts-loader": "^9.1.0",
-    "webpack-cli": "^4.6.0"
   }
 }
