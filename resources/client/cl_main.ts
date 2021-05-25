@@ -1,6 +1,5 @@
 import { NuiCallback } from './cl_utils';
 
-// TODO: Create exports soonTM
 const exp = (global as any).exports;
 
 exp('CreateMenu', (menu: Menu) => {
@@ -55,23 +54,11 @@ interface Menu {
 }
 
 interface MenuItem {
+  id: number;
   title: string;
   description: string;
 }
 
-/* 
-exp['Select'].CreateMenu({
-  title: 'Garage',
-  items: [
-    {
-      title: 'T20',
-      descripton: 'Best car'
-    }
-  ]
-})
-*/
-
-
-NuiCallback('selectedItem', (data: any) => {
+NuiCallback('select:selectedItem', (data: MenuItem) => {
   console.log(data);
 })

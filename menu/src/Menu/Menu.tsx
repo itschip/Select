@@ -1,11 +1,14 @@
 import React from 'react';
 import { IMenuItem } from '../typings/context';
 import styles from './Menu.module.scss';
+import { useNuiRequest } from "fivem-nui-react-lib";
 
 export default function Menu({ items }: { items: IMenuItem[] }) {
+  const Nui = useNuiRequest();
 
   const handleSelectedItem = (item: IMenuItem) => {
     console.log(item.title)
+    Nui.send('select:selectedItem', item)
   }
 
   return (
