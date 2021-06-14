@@ -1,6 +1,6 @@
 import { NuiCallback } from './cl_utils';
 
-// TODO: Create exports soonTM
+// TODO: Create exports soon tm - this is made
 const exp = (global as any).exports;
 
 exp('CreateMenu', (menu: Menu) => {
@@ -47,25 +47,25 @@ RegisterCommand(
   },
   false,
 );
+
 // Interfaces
+interface MenuItem {
+  title: string;
+  description: string;
+}
 
 interface Menu {
   title: string;
   items: MenuItem[];
 }
 
-interface MenuItem {
-  title: string;
-  description: string;
-}
-
-/* 
+/*
 exp['Select'].CreateMenu({
   title: 'Garage',
   items: [
     {
       title: 'T20',
-      descripton: 'Best car'
+      description: 'Best car'
     }
   ]
 })
