@@ -26,7 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: cd ./resources && yarn
-    - run: cd ./menu && yarm
+    - run: cd ./menu && yarn
     - name: Test Fivem Code
       run: cd ./menu && yarn build
     - name: Test NUI Code
