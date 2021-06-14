@@ -55,10 +55,10 @@ interface MenuItem {
 }
 
 interface Menu {
+  id: number;
   title: string;
   items: MenuItem[];
 }
-
 /*
 exp['Select'].CreateMenu({
   title: 'Garage',
@@ -68,5 +68,7 @@ exp['Select'].CreateMenu({
       description: 'Best car'
     }
   ]
+NuiCallback('select:selectedItem', (data: MenuItem) => {
+  console.log(data);
 })
 */
