@@ -28,6 +28,6 @@ jobs:
     - run: cd ./resources && yarn
     - run: cd ./menu && yarm
     - name: Test Fivem Code
-    - run: cd ./menu && yarn build
+      run: cd ./menu && yarn build
     - name: Test NUI Code
-    - run: cd ./menu && yarn build
+      run: cd ./menu && yarn build
